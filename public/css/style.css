@@ -91,6 +91,7 @@
 .song-item .inner-content .inner-title a:hover {
     color: #7c00c8;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .song-item .inner-content .inner-singer {
@@ -114,3 +115,72 @@
 }
 /* End Song-item */
 
+
+/* Singer-detail */
+.singer-detail .inner-title {
+    color: #F57F20;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.singer-detail .inner-actions {
+    display: flex;
+}
+
+.singer-detail .inner-actions div{
+    margin: 5px 10px;
+}
+
+.singer-detail .inner-play  {
+    display: flex;
+    margin: 15px 15px;
+}
+
+.singer-detail .inner-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #F57F20;
+    margin-right: 20px;
+    animation-name: spin;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* animation-play-state: paused; */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.singer-detail .inner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.singer-detail .inner-desc {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.singer-detail .inner-desc .inner-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #F57F20;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.singer-detail .inner-desc .inner-text {
+    font-size: 14px;
+    padding: 10px 15px;
+}
+/* End Singer-detail */
