@@ -32,7 +32,22 @@ if(aplayer) {
     });
     
     ap.on("ended", () => {
-        avatar.style.animationPlayState = "paused"; 
+        // avatar.style.animationPlayState = "paused"; 
+        // console.log("Kết thúc bài hát.");
+
+        const link = `/songs/listen/${dataSong._id}`;
+
+        const option = {
+            method: "PATCH"
+        };
+
+        fetch(link, option)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                const elementListenSpan = document.querySelector(".singer-detail .inner-listen span");
+                elementListenSpan.innerHTML = `${data.listen} lượt nghe`;
+            })
     });
 }
 // End Aplayer
