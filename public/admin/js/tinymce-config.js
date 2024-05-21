@@ -3,7 +3,7 @@ const listTextareaMCE = document.querySelectorAll("[textarea-mce]");
 if(listTextareaMCE.length > 0) {
     listTextareaMCE.forEach((textarea) => {
         tinymce.init({
-            selector: `#${id}`,
+            selector: `textarea`,
             plugins: "image code",
             image_title: true,
             automatic_uploads: true,
