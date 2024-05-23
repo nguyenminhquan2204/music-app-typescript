@@ -9,12 +9,18 @@ if(aplayer) {
 
     const ap = new APlayer({
         container: aplayer,
+        lrcType: 1,
         audio: [
             {
                 name: dataSong.title,
                 artist: dataSinger.fullName,
                 url: dataSong.audio,
-                cover: dataSong.avatar
+                cover: dataSong.avatar,
+                lrc: `
+                    [00:02.00] Lời bài hát giây thứ 2
+                    [00:04.00] Lời bài hát giây thứ 4
+                    [00:06.00] Lời bài hát giây thứ 6
+                `
             },
         ],
         autoplay: true,
