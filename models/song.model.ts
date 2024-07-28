@@ -21,6 +21,7 @@ const songSchema = new mongoose.Schema(
         lyrics: String,
         audio: String,
         status: String,
+        position: Number,
         slug: {
             type: String,
             slug: "title",

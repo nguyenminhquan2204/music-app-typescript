@@ -35,4 +35,12 @@ router.patch(
     controller.editPatch
 );
 
+router.patch("/change-status/:status/:id", controller.changeStatus);
+
+router.get("/detail/:id", controller.detail);
+
+router.delete("/delete/:id", controller.deleteItem);
+
+router.patch("/change-multi", controller.changeMulti);
+
 export const songRoutes: Router = router;

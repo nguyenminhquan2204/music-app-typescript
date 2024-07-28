@@ -4,6 +4,8 @@ const singerSchema = new mongoose.Schema(
     {
         fullName: String,
         avatar: String,
+        description: String,
+        position: Number,
         status: String,
         slug: String,
         deleted: {

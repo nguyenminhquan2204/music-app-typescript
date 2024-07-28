@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import path from "path";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import flash from "express-flash";
 
 import * as database from "./config/database";
 
@@ -34,6 +37,16 @@ app.use(express.static("public"));
 app.set("views", "./views");
 app.set("view engine", "pug");
 
+// Flash: hien thi thong bao
+app.use(cookieParser("QUANCHI"));
+app.use(session({
+    cookie: {
+        maxAge: 60000
+    },
+}));
+app.use(flash());
+// End Flash
+
 // TinyMCE
 app.use(
     "/tinymce",
@@ -49,6 +62,12 @@ clientRoutes(app);
 
 // Admin Routers
 adminRoutes(app);
+
+app.get("*", (req, res) => {
+    res.render("client/pages/errors/404", {
+        pageTitle: "404 Not Found",
+    });
+});
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
