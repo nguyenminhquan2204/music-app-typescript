@@ -6,7 +6,7 @@ import methodOverride from "method-override";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import flash from "express-flash";
-
+    
 import * as database from "./config/database";
 
 import clientRoutes from "./routes/client/index.route";
@@ -32,9 +32,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 
-app.use(express.static("public"));
+app.use(express.static(`${__dirname}/public`));
 
-app.set("views", "./views");
+app.set("views", `${__dirname}/views`);
 app.set("view engine", "pug");
 
 // Flash: hien thi thong bao

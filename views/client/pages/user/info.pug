@@ -7,11 +7,7 @@ block main
             .col-6
                 +box-head("Thông tin tài khoản")
             .col-6 
-                a(
-                    href=`/user/editInfo/${user.id}`
-                    class="btn btn-sm btn-success mr-1"
-                ) Sửa thông tin
-        
+
         .row
             .col-12 
                 .card.mb-4 
@@ -33,3 +29,7 @@ block main
                                         span(class="badge badge-success") Hoạt động 
                                     else
                                         span(class="badge badge-danger") Dừng hoạt động
+                        a(
+                            href=`/user/editInfo/${user.id}`
+                            class="btn btn-sm btn-primary mr-1"
+                        ) Sửa thông tin

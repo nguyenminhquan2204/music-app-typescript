@@ -44,8 +44,8 @@ const port = process.env.PORT || 3000;
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, method_override_1.default)("_method"));
-app.use(express_1.default.static("public"));
-app.set("views", "./views");
+app.use(express_1.default.static(`${__dirname}/public`));
+app.set("views", `${__dirname}/views`);
 app.set("view engine", "pug");
 app.use((0, cookie_parser_1.default)("QUANCHI"));
 app.use((0, express_session_1.default)({
